@@ -1,0 +1,15 @@
+{
+  "name": "greatmatter/antimatter",
+  "description": "The base theme for the Great Matter clients..",
+  "type": "drupal-theme",
+  "minimum-stability": "dev",
+  "homepage": "https://greatmatter.com",
+  "support": {
+    "issues": "https://github.com/greatmatter/antimatter/issues",
+    "source": "https://github.com/greatmatter/antimatter"
+  },
+  "require": {
+    "drupal/core": "^8.8 || ^9",
+    "drupal/scss_compiler": "1.x-dev"
+  }
+}

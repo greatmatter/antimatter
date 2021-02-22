@@ -1,0 +1,17 @@
+name: 'Antimatter'
+type: theme
+description: 'The theme built especially for Great Matter.'
+core_version_requirement: ^8 || ^9
+libraries:
+  - antimatter/global-styling
+  - antimatter/global-scripts
+base theme: classy
+regions:
+  super_header: Super Header
+  header: Header
+  above_content: 'Above Content'
+  content: Content
+  sidebar_first: 'Sidebar First'
+  above_footer: 'Above Footer'
+  footer: Footer
+  below_footer: 'Below Footer'

@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ */
+
+use \Drupal\Component\Render\FormattableMarkup;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Language\LanguageInterface;
+
+/**
+ * Implements template_preprocess_html().
+ */
+function antimatter_preprocess_html(&$variables, $hook) {
+  // Add some body classes to help with styling.
+  // $request = \Drupal::request();
+  // $path = $request->getPathInfo();
+  $path = \Drupal::service('path.current')->getPath();
+  $path_args = explode('/', $path);
+  if (count($path_args) >= 3) {
+    $variables['attributes']['class'][] = Html::cleanCssIdentifier(ltrim('path' . $path, '/'));
+  }
+
+  $alias = ltrim(\Drupal::service('path_alias.manager')->getAliasByPath($path), '/');
+  $component_concatenate = '';
+  foreach(explode('/', $alias) as $component) {
+    $component_concatenate .= '//' . $component;
+    $variables['attributes']['class'][] = Html::cleanCssIdentifier(ltrim('path' . $component_concatenate, '/'));
+  }
+
+  $variables['#attached']['drupalSettings']['path']['themeUrl'] = \Drupal::theme()->getActiveTheme()->getPath();
+}

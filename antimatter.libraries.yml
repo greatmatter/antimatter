@@ -1,0 +1,20 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/normalize.css: {}
+      libraries/jarallax/css/jarallax.css: {}
+      css/style.scss: {}
+global-scripts:
+  version: 1.x
+  js:
+    libraries/jarallax/js/jarallax.min.js: {minified: true}
+    libraries/jarallax/js/jarallax-video.min.js: {minified: true}
+    libraries/jarallax/js/jarallax-element.min.js: {minified: true}
+    libraries/ofi/js/ofi.min.js: {minified: true}
+    js/script.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
